@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+
+#logo-text {
+  font-family: Caveat, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  color: white;
+}
+
+.hero.is-large .hero-body {
+  padding: 100px !important;
+}
+#hero-bg {
+  background-image: url("./assets/main-bg.webp");
+  background-size: 100% 100vh !important;
+}
+#navbar {
+  background-color: #4033ff !important;
+}
