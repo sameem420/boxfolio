@@ -17,3 +17,12 @@
 #navbar {
   background-color: #4033ff !important;
 }
+.navbar-menu {
+  background-color: transparent !important;
+}
+.navbar-item:hover {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  border-top: 2px double white;
+}

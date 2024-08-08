@@ -5,8 +5,34 @@ import profile from "./assets/devsameem.png";
 import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { PiCodeBlockLight } from "react-icons/pi";
+import { useEffect } from "react";
 
 const App = () => {
+  useEffect(() => {
+    // document.addEventListener("DOMContentLoaded", () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll(".navbar-burger"),
+      0
+    );
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        console.log(el);
+        const $target = document.getElementById(target);
+        // console.log($target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
+    });
+    // });
+  }, []);
+
   return (
     <>
       <section className="hero is-large">
@@ -21,7 +47,15 @@ const App = () => {
                   /> */}
                   Muhammad Sameem
                 </a>
-                <span className="navbar-burger" data-target="navbarMenuHeroB">
+                <span
+                  className="navbar-burger has-text-white"
+                  data-target="navbarMenuHeroB"
+                  onClick={(el) => {
+                    const target = document.getElementById("navbarMenuHeroB");
+                    el.target.classList.toggle("is-active");
+                    target.classList.toggle("is-active");
+                  }}
+                >
                   <span></span>
                   <span></span>
                   <span></span>
@@ -30,18 +64,10 @@ const App = () => {
               </div>
               <div id="navbarMenuHeroB" className="navbar-menu">
                 <div className="navbar-end">
-                  <a className="navbar-item is-active"> Home </a>
-                  <a className="navbar-item"> Contact </a>
-                  <a className="navbar-item"> Services </a>
-                  <a className="navbar-item"> Project </a>
-                  {/* <span className="navbar-item">
-                    <a className="button is-info is-inverted">
-                      <span className="icon">
-                        <i className="fab fa-github"></i>
-                      </span>
-                      <span>Download</span>
-                    </a>
-                  </span> */}
+                  <a className="navbar-item "> Home</a>
+                  <a className="navbar-item "> Contact </a>
+                  <a className="navbar-item "> Services </a>
+                  <a className="navbar-item "> Project </a>
                 </div>
               </div>
             </div>
@@ -52,10 +78,12 @@ const App = () => {
           <div className="container">
             <div className="columns">
               <div className="column">
-                <p className="title is-size-2">
+                <p className="title is-size-2 has-text-white-bis">
                   Hi, <br /> I am Muhammad Sameem
                 </p>
-                <p className="subtitle is-size-4">JavaScript Developer</p>
+                <p className="subtitle is-size-4 has-text-grey-lighter">
+                  JavaScript Developer
+                </p>
               </div>
               <div className="column">
                 <figure className="image is-3by2">
