@@ -1,11 +1,17 @@
 import "./App.css";
-import developerbg from "./assets/developer.svg";
+import { useEffect } from "react";
+import developerbg from "./assets/dev.svg";
 import cardbg from "./assets/dark-bg.jpg";
-import profile from "./assets/devsameem.png";
+import avatar from "./assets/dev_icon.png";
 import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { PiCodeBlockLight } from "react-icons/pi";
-import { useEffect } from "react";
+import { FaCodeBranch } from "react-icons/fa6";
+import { FaHouse } from "react-icons/fa6";
+import { PiUserDuotone } from "react-icons/pi";
+import { TbDeviceDesktopAnalytics } from "react-icons/tb";
+import { IoDocumentTextOutline } from "react-icons/io5";
+import { PiHandWavingBold } from "react-icons/pi";
 
 const App = () => {
   useEffect(() => {
@@ -57,6 +63,7 @@ const App = () => {
                   }}
                 >
                   <span></span>
+
                   <span></span>
                   <span></span>
                   <span></span>
@@ -64,10 +71,28 @@ const App = () => {
               </div>
               <div id="navbarMenuHeroB" className="navbar-menu">
                 <div className="navbar-end">
-                  <a className="navbar-item "> Home</a>
-                  <a className="navbar-item "> Contact </a>
-                  <a className="navbar-item "> Services </a>
-                  <a className="navbar-item "> Project </a>
+                  <a className="navbar-item ">
+                    <FaHouse />
+                    Home
+                  </a>
+                  <a className="navbar-item ">
+                    <PiUserDuotone /> About
+                  </a>
+                  <a className="navbar-item ">
+                    <TbDeviceDesktopAnalytics /> Projects
+                  </a>
+                  <a className="navbar-item ">
+                    <IoDocumentTextOutline />
+                    Resume
+                  </a>
+                  <div className="navbar-item">
+                    <a className="button" href="https://github.com/sameem420">
+                      <span className="icon">
+                        <FaCodeBranch />
+                      </span>
+                      <span>GitHub</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,28 +100,31 @@ const App = () => {
         </div>
 
         <div className="hero-body" id="hero-bg">
-          <div className="container">
-            <div className="columns">
-              <div className="column">
-                <p className="title is-size-2 has-text-white-bis">
-                  Hi, <br /> I am Muhammad Sameem
-                </p>
-                <p className="subtitle is-size-4 has-text-grey-lighter">
-                  JavaScript Developer
-                </p>
-              </div>
-              <div className="column">
-                <figure className="image is-3by2">
-                  <img className="is-rounded" src={developerbg} />
-                </figure>
-              </div>
+          <div className="columns">
+            <div className="column is-6">
+              <p className="title is-size-2 has-text-white-bis">
+                Hi{" "}
+                <span className="has-text-warning">
+                  <PiHandWavingBold />
+                </span>
+                , <br /> I am Muhammad Sameem
+              </p>
+              <p className="subtitle is-size-4 has-text-grey-lighter">
+                JavaScript Developer
+              </p>
+            </div>
+            <div className="column is-6">
+              <figure className="image is-3by2">
+                <img className="is-rounded" src={developerbg} />
+              </figure>
             </div>
           </div>
+          {/* </div> */}
         </div>
 
-        <div className="container mt-5 is-flex is-justify-content-center">
-          <div className="columns is-flex-direction-row is-justify-content-center">
-            <div className="column is-5">
+        <div className="container p-2 is-flex is-justify-content-center">
+          <div className="columns is-flex-direction-row is-justify-content-center is-align-items-center">
+            <div className="column is-5 mt-4">
               <div className="card">
                 <div className="card-image">
                   <figure className="image is-3by1">
@@ -109,8 +137,8 @@ const App = () => {
                       <figure className="image is-96x96">
                         <img
                           className="is-rounded"
-                          src={profile}
-                          alt="Placeholder image"
+                          src={avatar}
+                          alt="Developer avatar"
                         />
                       </figure>
                     </div>
@@ -121,11 +149,8 @@ const App = () => {
                   </div>
 
                   <div className="content pt-4">
-                    <nav
-                      className="breadcrumb is-flex is-flex-column is-justify-content-center"
-                      aria-label="breadcrumbs"
-                    >
-                      <ul>
+                    <nav className="breadcrumb " aria-label="breadcrumbs">
+                      <ul className="is-flex is-flex-column is-justify-content-center is-align-items-center">
                         <li>
                           <a href="#">
                             <span className="icon is-small">
@@ -156,8 +181,10 @@ const App = () => {
                 </div>
               </div>
             </div>
-            <div className="column is-justify-content-center">
-              <p>
+            <div className="column has-text-justified">
+              <div className="divider">About</div>
+
+              <p className="p-2">
                 I am self-taught and an enthusiastic Software Engineer with
                 experience developing web-based softwares. I am focused on
                 developing and enhancing immersive, user-friendly, and
@@ -167,6 +194,76 @@ const App = () => {
                 the ground up. I am currently available for work and looking for
                 a new role as a Frontend developer.
               </p>
+              <aside className="menu p-2">
+                <p className="menu-label box has-text-warning has-background-dark p-2 ">
+                  Apart from coding, some other activities that I love to do!
+                </p>
+                <ul className="menu-list">
+                  <li>
+                    <ul>
+                      <li className="p-1">
+                        <a className="has-text-white-ter has-background-dark">
+                          Exploring and Learning new technologies
+                        </a>
+                      </li>
+                      <li className="p-1">
+                        <a className="has-text-white-ter has-background-dark">
+                          Improve Problem Solving & Soft Skills
+                        </a>
+                      </li>
+                      <li className="p-1">
+                        <a className="has-text-white-ter has-background-dark">
+                          Playing Open World, FPS and RPG Games
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <div className="container p-2 is-flex is-justify-content-start">
+          <div className="columns is-flex-direction-row is-justify-content-center">
+            <div className="column">
+              <h1 className="is-size-2">Experience</h1>
+
+              <ul className="timeline">
+                <li className="timeline-header">
+                  <span className="button is-primary">Start</span>
+                </li>
+                <li className="timeline-item is-warning">
+                  <div className="timeline-tag"></div>
+                  <div className="timeline-content">
+                    <p className="heading">January 2016</p>
+                    <p>Timeline content - Can include any HTML element</p>
+                  </div>
+                </li>
+                <li className="timeline-item is-danger">
+                  <div className="timeline-tag is-icon">
+                    <figure className="image is-32x32">
+                      <img src="http://bulma.io/images/placeholders/32x32.png" />
+                    </figure>
+                  </div>
+                  <div className="timeline-content">
+                    <p className="heading">February 2016</p>
+                    <p>Timeline content - Can include any HTML element</p>
+                  </div>
+                </li>
+                <li className="timeline-header">
+                  <span className="button is-primary">2017</span>
+                </li>
+                <li className="timeline-item">
+                  <div className="timeline-content">
+                    <p className="heading">March 2017</p>
+                    <p>Timeline content - Can include any HTML element</p>
+                  </div>
+                </li>
+                <li className="timeline-header">
+                  <span className="button is-primary">End</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
