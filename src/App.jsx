@@ -1,8 +1,10 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import developerbg from "./assets/dev.svg";
 import cardbg from "./assets/dark-bg.jpg";
 import avatar from "./assets/dev_icon.png";
+import footer_bg from "./assets/footer_bg.png";
+import bike from "./assets/bike.png";
 import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { PiCodeBlockLight } from "react-icons/pi";
@@ -12,8 +14,11 @@ import { PiUserDuotone } from "react-icons/pi";
 import { TbDeviceDesktopAnalytics } from "react-icons/tb";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { PiHandWavingBold } from "react-icons/pi";
+import { FaChevronCircleUp } from "react-icons/fa";
 
 const App = () => {
+  const [b2tVisible, setb2tVisible] = useState(false);
+
   useEffect(() => {
     // document.addEventListener("DOMContentLoaded", () => {
     // Get all "navbar-burger" elements
@@ -36,8 +41,24 @@ const App = () => {
         $target.classList.toggle("is-active");
       });
     });
+
     // });
   }, []);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setb2tVisible(true);
+    } else if (scrolled <= 300) {
+      setb2tVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  window.addEventListener("scroll", toggleVisible);
 
   return (
     <>
@@ -86,7 +107,11 @@ const App = () => {
                     Resume
                   </a>
                   <div className="navbar-item">
-                    <a className="button" href="https://github.com/sameem420">
+                    <a
+                      className="button"
+                      href="https://github.com/sameem420"
+                      target="_blank"
+                    >
                       <span className="icon">
                         <FaCodeBranch />
                       </span>
@@ -185,14 +210,18 @@ const App = () => {
               <div className="divider">About</div>
 
               <p className="p-2">
-                I am self-taught and an enthusiastic Software Engineer with
-                experience developing web-based softwares. I am focused on
-                developing and enhancing immersive, user-friendly, and
-                feature-rich applications. I apply analytical skills and a keen
-                eye for detail to create unique and effective web solutions,
-                provide technical skills and knowledge, design new websites from
-                the ground up. I am currently available for work and looking for
-                a new role as a Frontend developer.
+                An Optimistic and Ambitious Front-End Developer with over 2
+                years of experience specializing in GIS development. Expert in
+                crafting and enhancing intuitive and interactive, immersive,
+                user-friendly, and feature-rich applications using HTML, CSS,
+                JavaScript, React, and both ESRI and open-source tools. Skilled
+                in integrating GIS APIs like Google Maps, Leaflet, OpenLayers,
+                and ArcGIS to deliver dynamic mapping and spatial data-based
+                solutions. Committed to enhancing user experience and
+                application performance through efficient coding, responsive
+                design, and load time optimization. Proven problem-solver with a
+                track record of taking ownership of projects, mentoring
+                developers, and contributing to collaborative team environments.
               </p>
               <aside className="menu p-2">
                 <p className="menu-label box has-text-warning has-background-dark p-2 ">
@@ -231,37 +260,49 @@ const App = () => {
 
               <ul className="timeline">
                 <li className="timeline-header">
-                  <span className="button is-primary">Start</span>
+                  <span className="button is-primary">Current</span>
                 </li>
                 <li className="timeline-item is-warning">
-                  <div className="timeline-tag"></div>
-                  <div className="timeline-content">
-                    <p className="heading">January 2016</p>
-                    <p>Timeline content - Can include any HTML element</p>
-                  </div>
-                </li>
-                <li className="timeline-item is-danger">
                   <div className="timeline-tag is-icon">
                     <figure className="image is-32x32">
-                      <img src="http://bulma.io/images/placeholders/32x32.png" />
+                      <img src={avatar} />
                     </figure>
                   </div>
                   <div className="timeline-content">
-                    <p className="heading">February 2016</p>
-                    <p>Timeline content - Can include any HTML element</p>
+                    <p className="heading">October 2022 - Present</p>
+                    <p>GIS Developer - SIME Dubai UAE</p>
                   </div>
                 </li>
-                <li className="timeline-header">
-                  <span className="button is-primary">2017</span>
-                </li>
-                <li className="timeline-item">
+                {/* <li className="timeline-header">
+                  <span className="button is-primary">2022</span>
+                </li> */}
+                <li className="timeline-item is-danger">
+                  <div className="timeline-tag is-icon">
+                    <figure className="image is-32x32">
+                      <img src={avatar} />
+                    </figure>
+                  </div>
                   <div className="timeline-content">
-                    <p className="heading">March 2017</p>
-                    <p>Timeline content - Can include any HTML element</p>
+                    <p className="heading">January 2022 - September 2022</p>
+                    <p>React Developer - Freelance</p>
+                  </div>
+                </li>
+                {/* <li className="timeline-header">
+                  <span className="button is-primary">2021</span>
+                </li> */}
+                <li className="timeline-item is-danger">
+                  <div className="timeline-tag is-icon">
+                    <figure className="image is-32x32">
+                      <img src={avatar} />
+                    </figure>
+                  </div>
+                  <div className="timeline-content">
+                    <p className="heading">February 2021 - December 2021</p>
+                    <p>React Developer - Ripe.ai (Remote) USA</p>
                   </div>
                 </li>
                 <li className="timeline-header">
-                  <span className="button is-primary">End</span>
+                  <span className="button is-primary">Start</span>
                 </li>
               </ul>
             </div>
@@ -289,6 +330,30 @@ const App = () => {
           </nav>
         </div>
       </section>
+      <footer className="footer has-background-light">
+        <div className="content has-text-centered">
+          <button
+            id="back2Top"
+            title="Back to top"
+            onClick={scrollToTop}
+            style={{ display: b2tVisible ? "inline" : "none" }}
+          >
+            <FaChevronCircleUp id="b2tIcon" />
+          </button>
+          <div className="footer-top">
+            <img src={footer_bg} className="img-fluid" />
+            <div className="footer-images">
+              <img src={bike} className="w3-hide-small img-thumbail" />
+            </div>
+          </div>
+          <div className="container text-center mt-2">
+            <h5 className="footer-text">
+              Crafted with <i className="fa fa-heart m-1"></i> by Muhammad
+              Sameem
+            </h5>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
