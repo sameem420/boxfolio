@@ -5,19 +5,58 @@ import cardbg from "./assets/dark-bg.jpg";
 import avatar from "./assets/dev_icon.png";
 import footer_bg from "./assets/footer_bg.png";
 import bike from "./assets/bike.png";
-import { SiGithub } from "react-icons/si";
+import car from "./assets/car.png";
+import reactIcon from "./assets/skills/react.svg";
+import htmlIcon from "./assets/skills/html5.svg";
+import {
+  SiArcgis,
+  SiBulma,
+  SiEsri,
+  SiGithub,
+  SiMicrosoftsqlserver,
+  SiOracle,
+  SiTailwindcss,
+} from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { PiCodeBlockLight } from "react-icons/pi";
-import { FaCodeBranch } from "react-icons/fa6";
+import {
+  FaBootstrap,
+  FaChrome,
+  FaCodeBranch,
+  FaCss3Alt,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaNode,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+  FaSquareJs,
+} from "react-icons/fa6";
 import { FaHouse } from "react-icons/fa6";
 import { PiUserDuotone } from "react-icons/pi";
-import { TbDeviceDesktopAnalytics } from "react-icons/tb";
+import { TbDeviceDesktopAnalytics, TbSql } from "react-icons/tb";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { PiHandWavingBold } from "react-icons/pi";
 import { FaChevronCircleUp } from "react-icons/fa";
+import { GiTechnoHeart } from "react-icons/gi";
+import { VscVscode, VscVscodeInsiders } from "react-icons/vsc";
 
 const App = () => {
   const [b2tVisible, setb2tVisible] = useState(false);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setb2tVisible(true);
+    } else if (scrolled <= 300) {
+      setb2tVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     // document.addEventListener("DOMContentLoaded", () => {
@@ -41,24 +80,13 @@ const App = () => {
         $target.classList.toggle("is-active");
       });
     });
+    window.addEventListener("scroll", toggleVisible);
 
+    return () => {
+      window.removeEventListener("scroll", toggleVisible);
+    };
     // });
   }, []);
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
-      setb2tVisible(true);
-    } else if (scrolled <= 300) {
-      setb2tVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  window.addEventListener("scroll", toggleVisible);
 
   return (
     <>
@@ -92,19 +120,17 @@ const App = () => {
               </div>
               <div id="navbarMenuHeroB" className="navbar-menu">
                 <div className="navbar-end">
-                  <a className="navbar-item ">
-                    <FaHouse />
-                    Home
+                  <a className="navbar-item">
+                    <FaHouse /> Home
                   </a>
-                  <a className="navbar-item ">
+                  <a className="navbar-item">
                     <PiUserDuotone /> About
                   </a>
-                  <a className="navbar-item ">
+                  <a className="navbar-item">
                     <TbDeviceDesktopAnalytics /> Projects
                   </a>
-                  <a className="navbar-item ">
-                    <IoDocumentTextOutline />
-                    Resume
+                  <a className="navbar-item">
+                    <IoDocumentTextOutline /> Resume
                   </a>
                   <div className="navbar-item">
                     <a
@@ -207,7 +233,7 @@ const App = () => {
               </div>
             </div>
             <div className="column has-text-justified">
-              <div className="divider">About</div>
+              <div className="divider is-size-5">About</div>
 
               <p className="p-2">
                 An Optimistic and Ambitious Front-End Developer with over 2
@@ -254,9 +280,9 @@ const App = () => {
         </div>
 
         <div className="container p-2 is-flex is-justify-content-start">
-          <div className="columns is-flex-direction-row is-justify-content-center">
+          <div className="columns is-flex-direction-row is-justify-content-center is-align-items-center">
             <div className="column">
-              <h1 className="is-size-2">Experience</h1>
+              <h1 className="divider is-size-5">Experience</h1>
 
               <ul className="timeline">
                 <li className="timeline-header">
@@ -309,7 +335,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="hero-foot mt-5">
+        {/* <div className="hero-foot mt-5">
           <nav className="tabs is-boxed is-fullwidth">
             <div className="container">
               <ul>
@@ -328,10 +354,99 @@ const App = () => {
               </ul>
             </div>
           </nav>
+        </div> */}
+      </section>
+
+      <section className="section">
+        <div className="divider is-size-5">Skills</div>
+        <div className="container has-text-centered">
+          <div className="columns pt-2 is-flex-direction-row is-justify-content-space-between">
+            <div className="p-2">
+              <FaHtml5 className="is-size-2 has-text-danger-50" />
+              <p className="mt-2 has-text-weight-semibold">HTML</p>
+            </div>
+            <div className="p-2">
+              <FaCss3Alt className="is-size-2 has-text-link" />
+              <p className="mt-2 has-text-weight-semibold">CSS</p>
+            </div>
+            <div className="p-2">
+              <FaSquareJs className="is-size-2 has-text-warning" />
+              <p className="mt-2 has-text-weight-semibold">JavaScript</p>
+            </div>
+            <div className="p-2">
+              <FaBootstrap className="is-size-2 has-text-link-100-invert" />
+              <p className="mt-2 has-text-weight-semibold">Bootstrap</p>
+            </div>
+            <div className="p-2">
+              <SiBulma className="is-size-2 has-text-primary-45" />
+              <p className="mt-2 has-text-weight-semibold">Bulma CSS</p>
+            </div>
+            <div className="p-2">
+              <SiTailwindcss className="is-size-2 has-text-info-45" />
+              <p className="mt-2 has-text-weight-semibold">Tailwind CSS</p>
+            </div>
+          </div>
+
+          <div className="columns pt-2 is-flex-direction-row is-justify-content-space-between">
+            <div className="p-2">
+              <FaGitAlt className="is-size-2 has-text-danger" />
+              <p className="mt-2 has-text-weight-semibold">Git</p>
+            </div>
+            <div className="p-2">
+              <FaGithub className="is-size-2 has-text-dark" />
+              <p className="mt-2 has-text-weight-semibold">GitHub</p>
+            </div>
+            <div className="p-2">
+              <FaChrome className="is-size-2 has-text-info" />
+              <p className="mt-2 has-text-weight-semibold">Chrome Dev Tools</p>
+            </div>
+            <div className="p-2">
+              <FaReact className="is-size-2 has-text-info-50" />
+              <p className="mt-2 has-text-weight-semibold">React JS</p>
+            </div>
+            <div className="p-2">
+              <FaNodeJs className="is-size-2 has-text-primary-20" />
+              <p className="mt-2 has-text-weight-semibold">Node JS</p>
+            </div>
+            <div className="p-2">
+              <FaPython className="is-size-2 has-text-info" />
+              <p className="mt-2 has-text-weight-semibold">Python</p>
+            </div>
+          </div>
+
+          <div className="columns pt-2 is-flex-direction-row is-justify-content-space-between">
+            <div className="p-2">
+              <TbSql className="is-size-2 has-text-warning" />
+              <p className="mt-2 has-text-weight-semibold">SQL</p>
+            </div>
+            <div className="p-2">
+              <SiMicrosoftsqlserver className="is-size-2 has-text-danger-100-invert" />
+              <p className="mt-2 has-text-weight-semibold">MS SQL Server</p>
+            </div>
+            <div className="p-2">
+              <SiOracle className="is-size-2 has-text-danger" />
+              <p className="mt-2 has-text-weight-semibold">
+                Oracle SQL Developer
+              </p>
+            </div>
+            <div className="p-2">
+              <VscVscode className="is-size-2 has-text-link" />
+              <p className="mt-2 has-text-weight-semibold">VS Code</p>
+            </div>
+            <div className="p-2">
+              <SiArcgis className="is-size-2 has-text-link" />
+              <p className="mt-2 has-text-weight-semibold">ArcGIS Pro</p>
+            </div>
+            <div className="p-2">
+              <SiEsri className="is-size-2 has-text-link" />
+              <p className="mt-2 has-text-weight-semibold">ESRI</p>
+            </div>
+          </div>
         </div>
       </section>
-      <footer className="footer has-background-light">
-        <div className="content has-text-centered">
+
+      <footer className="box has-background-white mt-2">
+        <div className="box has-text-centered has-background-link-100">
           <button
             id="back2Top"
             title="Back to top"
@@ -343,13 +458,27 @@ const App = () => {
           <div className="footer-top">
             <img src={footer_bg} className="img-fluid" />
             <div className="footer-images">
-              <img src={bike} className="w3-hide-small img-thumbail" />
+              <div>
+                <img
+                  src={bike}
+                  className="w3-hide-small img-thumbail"
+                  id="bikeIcon"
+                />
+              </div>
+              <div className="has-text-left pt-0">
+                <img
+                  src={car}
+                  className="w3-hide-small img-thumbail "
+                  id="carIcon"
+                />
+              </div>
             </div>
           </div>
-          <div className="container text-center mt-2">
-            <h5 className="footer-text">
-              Crafted with <i className="fa fa-heart m-1"></i> by Muhammad
-              Sameem
+          <div className="box has-text-dark has-background-link-100 text-center py-0">
+            <h5 className="footer-text is-uppercase has-text-weight-bold">
+              Crafted with{" "}
+              <GiTechnoHeart className="has-text-danger is-size-5 has-text-weight-semibold" />{" "}
+              by Muhammad Sameem
             </h5>
           </div>
         </div>
