@@ -26,7 +26,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
-import { PiCodeBlockLight } from "react-icons/pi";
+import { PiCertificateLight, PiCodeBlockLight } from "react-icons/pi";
 import {
   FaBootstrap,
   FaChrome,
@@ -42,7 +42,7 @@ import {
 } from "react-icons/fa6";
 import { FaHouse } from "react-icons/fa6";
 import { PiUserDuotone } from "react-icons/pi";
-import { TbDeviceDesktopAnalytics, TbSql } from "react-icons/tb";
+import { TbDeviceDesktopAnalytics, TbMessage2Pin, TbSql } from "react-icons/tb";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { PiHandWavingBold } from "react-icons/pi";
 import { FaChevronCircleUp } from "react-icons/fa";
@@ -135,6 +135,12 @@ const App = () => {
                   </a>
                   <a className="navbar-item">
                     <TbDeviceDesktopAnalytics /> Projects
+                  </a>
+                  <a className="navbar-item">
+                    <PiCertificateLight /> Certifications
+                  </a>
+                  <a className="navbar-item">
+                    <TbMessage2Pin /> Contact
                   </a>
                   <a className="navbar-item">
                     <IoDocumentTextOutline /> Resume
@@ -286,17 +292,17 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container p-2 is-flex is-justify-content-start">
+        <div className="container p-2 is-flex is-justify-content-center">
           <div className="columns is-flex-direction-row is-justify-content-center is-align-items-center">
             <div className="column">
               <h1 className="divider is-size-5">Experience</h1>
 
-              <ul className="timeline">
+              <ul className="timeline box">
                 <li className="timeline-header">
-                  <span className="button is-primary">Current</span>
+                  <span className="button is-link">Current</span>
                 </li>
                 <li className="timeline-item is-warning">
-                  <div className="timeline-tag is-icon">
+                  <div className="timeline-tag is-icon ">
                     <figure className="image is-32x32">
                       <img src={avatar} />
                     </figure>
@@ -335,7 +341,7 @@ const App = () => {
                   </div>
                 </li>
                 <li className="timeline-header">
-                  <span className="button is-primary">Start</span>
+                  <span className="button is-link">Start</span>
                 </li>
               </ul>
             </div>
@@ -496,6 +502,94 @@ const App = () => {
             <div className="column p-2">
               <img width="36px" src={qgis} alt="QGIS" />
               <p className="mt-2 has-text-weight-semibold">QGIS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="divider is-size-5">Certifications</div>
+        <div className="container has-text-centered">
+          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
+            <div className="column p-2">
+              <FaHtml5 className="is-size-2 has-text-danger-50" />
+              <p className="mt-2 has-text-weight-semibold">HTML</p>
+            </div>
+            <div className="column p-2">
+              <FaCss3Alt className="is-size-2 has-text-link" />
+              <p className="mt-2 has-text-weight-semibold">CSS</p>
+            </div>
+            <div className="column p-2">
+              <FaSquareJs className="is-size-2 has-text-warning" />
+              <p className="mt-2 has-text-weight-semibold">JavaScript</p>
+            </div>
+            <div className="column p-2">
+              <SiJquery className="is-size-2 has-text-link-40" />
+              <p className="mt-2 has-text-weight-semibold">JQuery</p>
+            </div>
+            <div className="column sp-2">
+              <FaPython className="is-size-2 has-text-info" />
+              <p className="mt-2 has-text-weight-semibold">Python</p>
+            </div>
+            <div className="column p-2">
+              <TbSql className="is-size-2 has-text-warning" />
+              <p className="mt-2 has-text-weight-semibold">SQL</p>
+            </div>
+            <div className="column p-2">
+              <FaBootstrap className="is-size-2 has-text-link-100-invert" />
+              <p className="mt-2 has-text-weight-semibold">Bootstrap</p>
+            </div>
+            <div className="column p-2">
+              <SiBulma className="is-size-2 has-text-primary-45" />
+              <p className="mt-2 has-text-weight-semibold">Bulma CSS</p>
+            </div>
+            <div className="column p-2">
+              <SiTailwindcss className="is-size-2 has-text-info-45" />
+              <p className="mt-2 has-text-weight-semibold">Tailwind CSS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="divider is-size-5">Contact</div>
+        <div className="container has-text-centered">
+          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
+            <div className="column p-2">
+              <FaHtml5 className="is-size-2 has-text-danger-50" />
+              <p className="mt-2 has-text-weight-semibold">HTML</p>
+            </div>
+            <div className="column p-2">
+              <FaCss3Alt className="is-size-2 has-text-link" />
+              <p className="mt-2 has-text-weight-semibold">CSS</p>
+            </div>
+            <div className="column p-2">
+              <FaSquareJs className="is-size-2 has-text-warning" />
+              <p className="mt-2 has-text-weight-semibold">JavaScript</p>
+            </div>
+            <div className="column p-2">
+              <SiJquery className="is-size-2 has-text-link-40" />
+              <p className="mt-2 has-text-weight-semibold">JQuery</p>
+            </div>
+            <div className="column sp-2">
+              <FaPython className="is-size-2 has-text-info" />
+              <p className="mt-2 has-text-weight-semibold">Python</p>
+            </div>
+            <div className="column p-2">
+              <TbSql className="is-size-2 has-text-warning" />
+              <p className="mt-2 has-text-weight-semibold">SQL</p>
+            </div>
+            <div className="column p-2">
+              <FaBootstrap className="is-size-2 has-text-link-100-invert" />
+              <p className="mt-2 has-text-weight-semibold">Bootstrap</p>
+            </div>
+            <div className="column p-2">
+              <SiBulma className="is-size-2 has-text-primary-45" />
+              <p className="mt-2 has-text-weight-semibold">Bulma CSS</p>
+            </div>
+            <div className="column p-2">
+              <SiTailwindcss className="is-size-2 has-text-info-45" />
+              <p className="mt-2 has-text-weight-semibold">Tailwind CSS</p>
             </div>
           </div>
         </div>
