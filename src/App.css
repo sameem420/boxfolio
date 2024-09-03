@@ -22,7 +22,13 @@
 .navbar-menu {
   background-color: transparent !important;
 }
-.navbar-item:hover {
+.navbar-menu > .navbar-end > .navbar-item:hover {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  border-top: 2px double white;
+}
+.navbar-brand .navbar-item:hover {
   background-color: transparent;
   border: 0;
   color: white;

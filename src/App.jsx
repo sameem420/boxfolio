@@ -40,6 +40,7 @@ import {
   FaChrome,
   FaCodeBranch,
   FaCss3Alt,
+  FaFolderOpen,
   FaGitAlt,
   FaGithub,
   FaHtml5,
@@ -56,6 +57,8 @@ import { PiHandWavingBold } from "react-icons/pi";
 import { FaAngleDoubleDown, FaChevronCircleUp } from "react-icons/fa";
 import { GiTechnoHeart } from "react-icons/gi";
 import { VscVscode, VscVscodeInsiders } from "react-icons/vsc";
+
+import { Document } from "react-pdf";
 
 const App = () => {
   const [b2tVisible, setb2tVisible] = useState(false);
@@ -519,43 +522,52 @@ const App = () => {
         <div className="divider is-size-5">Certifications</div>
         <div className="container has-text-centered">
           <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
-            <div className="column p-2">
-              <FaHtml5 className="is-size-2 has-text-danger-50" />
-              <p className="mt-2 has-text-weight-semibold">HTML</p>
+            <div className="column p-1">
+              <img
+                src="https://drive.google.com/thumbnail?id=1FR2A-n6pK1dMbGmlrj5jRohnpz_PpyhT&sz=w1000"
+                alt="Kaggle - Intro to Programming"
+                className="image is-3by2"
+              />
+              {/* <p className="mt-2 has-text-weight-semibold">Bulma CSS</p> */}
             </div>
-            <div className="column p-2">
-              <FaCss3Alt className="is-size-2 has-text-link" />
-              <p className="mt-2 has-text-weight-semibold">CSS</p>
+            <div className="column p-1">
+              <img
+                src="https://drive.google.com/thumbnail?id=1GyRpfZDmELqrVxqhiwW77NByBAIkqJBS&sz=w1000"
+                alt="Kaggle - Python"
+                className="image is-3by2"
+              />
             </div>
-            <div className="column p-2">
-              <FaSquareJs className="is-size-2 has-text-warning" />
-              <p className="mt-2 has-text-weight-semibold">JavaScript</p>
+            <div className="column p-1">
+              {/* <iframe
+                src="https://drive.google.com/file/d/1XD4wYW-qJFOxQILiad3EAqpyIZCvKiov/preview"
+                height={"100%"}
+              ></iframe> */}
+              <img
+                src="https://drive.google.com/thumbnail?id=1rUea6LxZSCqCBH2m0Vd59Br92RRg7mvZ&sz=w1000"
+                alt="ESRI - Getting Started with GIS"
+                className="image is-3by2"
+              />
+              {/* <p className="mt-2 has-text-weight-semibold">Tailwind CSS</p> */}
             </div>
-            <div className="column p-2">
-              <SiJquery className="is-size-2 has-text-link-40" />
-              <p className="mt-2 has-text-weight-semibold">JQuery</p>
-            </div>
-            <div className="column sp-2">
-              <FaPython className="is-size-2 has-text-info" />
-              <p className="mt-2 has-text-weight-semibold">Python</p>
-            </div>
-            <div className="column p-2">
-              <TbSql className="is-size-2 has-text-warning" />
-              <p className="mt-2 has-text-weight-semibold">SQL</p>
-            </div>
-            <div className="column p-2">
-              <FaBootstrap className="is-size-2 has-text-link-100-invert" />
-              <p className="mt-2 has-text-weight-semibold">Bootstrap</p>
-            </div>
-            <div className="column p-2">
-              <SiBulma className="is-size-2 has-text-primary-45" />
-              <p className="mt-2 has-text-weight-semibold">Bulma CSS</p>
-            </div>
-            <div className="column p-2">
-              <SiTailwindcss className="is-size-2 has-text-info-45" />
-              <p className="mt-2 has-text-weight-semibold">Tailwind CSS</p>
+            <div className="column p-1">
+              <img
+                src="https://drive.google.com/thumbnail?id=1s2JrAuO7eRsdd-ZrWqu58yq53CpSXMEK&sz=w1000"
+                alt="ESRI - Python for Everyone"
+                className="image is-3by2"
+              />
             </div>
           </div>
+          <button className="button is-link is-rounded">
+            <a
+              className="navbar-item"
+              target="_blank"
+              rel="noopener"
+              href="https://drive.google.com/drive/u/1/folders/1XdY47QkoBJHwJNKpHX_lmPQlw89O4lqc"
+            >
+              <FaFolderOpen className="is-size-5" />
+              View More!
+            </a>
+          </button>
         </div>
       </section>
 
