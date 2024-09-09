@@ -70,6 +70,7 @@ import { PiHandWavingBold } from "react-icons/pi";
 import { FaAngleDoubleDown, FaChevronCircleUp } from "react-icons/fa";
 import { GiTechnoHeart } from "react-icons/gi";
 import { VscVscode, VscVscodeInsiders } from "react-icons/vsc";
+import AOS from "aos";
 
 const App = () => {
   const [b2tVisible, setb2tVisible] = useState(false);
@@ -88,6 +89,7 @@ const App = () => {
   };
 
   useEffect(() => {
+    AOS.init();
     // document.addEventListener("DOMContentLoaded", () => {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
@@ -185,7 +187,6 @@ const App = () => {
           </nav>
         </div>
 
-        <div className="hero-body" id="hero-bg">
           <div className="columns">
             <div className="column is-6">
               <p className="title is-size-2 has-text-white-bis">
@@ -209,7 +210,10 @@ const App = () => {
         </div>
 
         <div className="container p-2 is-flex is-justify-content-center">
-          <div className="columns is-flex-direction-row is-justify-content-center is-align-items-center">
+          <div
+            className="columns is-flex-direction-row is-justify-content-center is-align-items-center "
+            data-aos="fade-up"
+          >
             <div className="column is-5 mt-4">
               <div className="card has-background-dark">
                 <div className="card-image">
@@ -315,7 +319,11 @@ const App = () => {
         </div>
 
         <div className="container p-2 is-flex is-justify-content-center">
-          <div className="columns is-flex-direction-row is-justify-content-center is-align-items-center">
+          <div
+            className="columns is-flex-direction-row is-justify-content-center is-align-items-center"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+          >
             <div className="column">
               <h1 className="divider is-size-5">Experience</h1>
 
@@ -407,7 +415,10 @@ const App = () => {
       <section className="section">
         <div className="divider is-size-5">Skills</div>
         <div className="container has-text-centered">
-          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
+          <div
+            data-aos="flip-left"
+            className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center"
+          >
             <div className="column p-2">
               <FaHtml5 className="is-size-2 has-text-danger-50" />
               <p className="mt-2 has-text-weight-semibold">HTML</p>
@@ -446,7 +457,10 @@ const App = () => {
             </div>
           </div>
 
-          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
+          <div
+            data-aos="flip-up"
+            className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center"
+          >
             <div className="column p-2">
               <FaGitAlt className="is-size-2 has-text-danger" />
               <p className="mt-2 has-text-weight-semibold">Git</p>
@@ -488,7 +502,10 @@ const App = () => {
             </div>
           </div>
 
-          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
+          <div
+            data-aos="flip-right"
+            className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center"
+          >
             <div className="column p-2">
               <SiArcgis className="is-size-2 has-text-link" />
               <p className="mt-2 has-text-weight-semibold">ArcGIS Pro</p>
@@ -544,7 +561,10 @@ const App = () => {
       <section className="section">
         <div className="divider is-size-5">Some Things I've Built</div>
         <div className="container has-text-centered">
-          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-space-evenly is-align-items-stretch">
+          <div
+            data-aos="zoom-in"
+            className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-space-evenly is-align-items-stretch"
+          >
             <div className="column p-1">
               <p className="menu-label mt-2 has-text-weight-semibold has-text-dark pb-2">
                 Cri.pe
@@ -705,7 +725,10 @@ const App = () => {
       <section className="section">
         <div className="divider is-size-5">Certifications</div>
         <div className="container has-text-centered">
-          <div className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center">
+          <div
+            data-aos="zoom-out"
+            className="columns is-desktop pt-2 is-flex-direction-row is-justify-content-space-between is-align-content-center is-align-items-center"
+          >
             <div className="column p-1">
               <img
                 src="https://drive.google.com/thumbnail?id=1FR2A-n6pK1dMbGmlrj5jRohnpz_PpyhT&sz=w1000"
@@ -757,7 +780,11 @@ const App = () => {
 
       <section className="section">
         <div className="divider is-size-5">Contact</div>
-        <div className="container has-text-centered">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          className="container has-text-centered"
+        >
           <img src={destination} alt="location" width="48" />
           <h5 className="menu-label my-2 has-text-weight-semibold has-text-warning box has-background-dark">
             Timezones I can easily workwith (GMT+4) (GMT+5) (GMT+1)
